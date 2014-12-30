@@ -1,5 +1,7 @@
 class Cart
 
+  attr_accessor :items
+
   def initialized
     items
   end
@@ -20,13 +22,13 @@ class Cart
     items.delete(item)
   end
 
-  def total
+  def total_price
     total = items.collect { |item| item.price} 
     total.inject(:+) 
   end
 
   def list 
-    items.each {|item| p item}
+    items.each {|item| item}
   end
 
 
