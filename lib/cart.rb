@@ -1,3 +1,5 @@
+require_relative 'dish'
+
 class Cart
 
   attr_accessor :items
@@ -27,10 +29,10 @@ class Cart
     total.inject(:+) 
   end
 
-  def list 
-    items.each {|item| item}
+  def list_items
+    counts = Hash.new(0)
+    list = items.inject(Hash.new(0)) { |number, dish| number[dish.name] += 1 ;number}
   end
-
 
 
 end
