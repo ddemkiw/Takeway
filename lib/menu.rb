@@ -1,9 +1,9 @@
 class Menu
 
-  attr_reader :menu
+  attr_reader :dishes
 
   def initialize
-    @menu = {
+    @dishes = {
           
           "peking_duck" => 3, 
           "noodles" => 2, 
@@ -11,13 +11,8 @@ class Menu
               }
   end
 
-  def display_menu
-    @menu.each{|dish, price| p "#{dish} #{price}"}
-    @menu
-  end
-
   def add(dish, price)
-    @menu[dish] = price
+    @dishes[dish] = price
   end
 
 end
