@@ -26,8 +26,14 @@ describe Cart do
     cart.add(dish1)
     cart.add(dish2)
     expect(cart.total).to eq(5)
-
   end
+
+  it 'should be able to list items' do
+    expect(dish1).to receive(name).and.return("ham")
+    cart.add(dish1)
+    expect(cart.list).to include ("ham")
+
+  end 
 
 
 end

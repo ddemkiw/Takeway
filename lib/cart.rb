@@ -25,6 +25,10 @@ class Cart
     total.inject(:+) 
   end
 
+  def list 
+    items.each {|item| p item}
+  end
+
 
 
 end
