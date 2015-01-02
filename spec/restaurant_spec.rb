@@ -1,4 +1,4 @@
-require 'store'
+require 'restaurant'
 
 describe Store do
 

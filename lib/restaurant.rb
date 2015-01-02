@@ -2,7 +2,7 @@ require_relative 'menu'
 require_relative 'cart'
 require_relative 'dish'
 
-class Store
+class Restaurant
 
   attr_reader :cart, :menu
 
@@ -13,24 +13,23 @@ class Store
   end 
   
 
-  def intro
+  def get_order
+    input = nil
     puts "Please Select Item from Menu"
     @menu.display
     puts "Please enter name of item you wish to order."
     puts "If you would like to order multiples of one item, please enter the name and number of items"  
-    puts "When you are finished ordering, type 'finished'"
-    input = nil
-      until input == "finished"
-        print ">"
-         if @cart.items.length > 0 
-            puts "Items in cart #{@cart.list_items} total: #{@cart.total_price} "
-          end
-        input = gets.chomp.split(/[\s,]+/)
-        item = input[0]
-        input[1] != nil ? number = input[1] : number = 1
-        self.order(item, number)
+    puts "When you are finished ordering, enter 'finished'"
+      
+      until input == "finished"  
+        # @cart.items.length > 0 ? "Items in cart #{@cart.list_items} total: £#{@cart.total_price}"
+            print ">"
+            input = gets.chomp.split(/[\s,]+/)
+            item = input[0]
+            input[1] != nil ? number = input[1] : number = 1
+            self.order(item, number)
       end
-
+      puts "thanksme"
   end
 
   def order(item, number)
@@ -56,6 +55,8 @@ class Store
       intro
     end
   end
-  
 
 end
+
+
+

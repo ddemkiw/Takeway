@@ -20,10 +20,6 @@ class Cart
     items.count
   end
 
-  def remove(item)
-    items.delete(item)
-  end
-
   def total_price
     total = items.collect { |item| item.price} 
     total.inject(:+) 
