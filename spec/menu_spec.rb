@@ -3,6 +3,10 @@ require 'menu'
 describe Menu do
 
   let(:menu) {Menu.new}
+
+  before do
+    Menu.any_instance.stub(:puts)
+  end
   
   it 'should know the available dishes and their prices' do
     expect(menu.dishes).to be_a Hash
@@ -17,5 +21,9 @@ describe Menu do
     menu.add("ginger beef", 5)
     expect(menu.dishes.length).to eq(4)
   end
+
+  it 'should be able to list it\'s items' do 
+  expect(menu.display).to include('peking_duck')
+  end 
 
 end

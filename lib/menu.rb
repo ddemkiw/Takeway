@@ -13,6 +13,7 @@ class Menu
 
   def display
     @dishes.each { |dish, price| puts "#{dish} £#{price}" }
+    
   end
 
   def add(dish, price)
