@@ -28,15 +28,18 @@ describe Cart do
     expect(cart.items_count).to eq(0)
   end
 
-  # it 'should be able to list its contents' do 
-  #   cart.add(dish3)
-  #   cart.add(dish4)
-  #   cart.add(dish5)
-  #   cart.add(dish6)
-  #   expect(cart.list_items).to be_a_kind_of(String)
-  # end
+  it 'should be able to be emptied' do 
+    cart.add(dish3)
+    cart.add(dish4)
+    expect(cart.empty).to eq([])
+  end 
 
-  it 'should be able to tally items price' do
+  it 'should be able to list items' do 
+    cart.add(dish3)
+    expect(cart.list_items).to include('noodles, £2')
+  end
+
+  it 'should be able to tally total price' do
     cart.add(dish1)
     cart.add(dish2)
     expect(cart.total_price).to eq(5)

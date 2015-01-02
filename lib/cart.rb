@@ -5,7 +5,7 @@ class Cart
   attr_accessor :items
 
   def initialized
-    items
+    @items
   end
 
   def items 
@@ -20,14 +20,21 @@ class Cart
     items.count
   end
 
+  def list_items
+    items.map{|item| "#{item.name}, £#{item.price}"}
+  end
+
+  def remove(item)
+    @items.delete(item)
+  end
+
+  def empty
+    items.clear
+  end
+
   def total_price
     total = items.collect { |item| item.price} 
     total.inject(:+) 
-  end
-
-  def list_items
-    counts = Hash.new(0)
-    list = items.inject(Hash.new(0)) { |number, dish| number[dish.name] += 1 ;number}
   end
 
 
