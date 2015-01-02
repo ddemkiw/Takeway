@@ -1,31 +1,42 @@
 require 'restaurant'
 
-describe Store do
+describe Restaurant do
 
-  let(:store) {Store.new}
+  let(:restaurant) {Restaurant.new}
+  let(:message) {double :message}
 
-  it 'should be able to place an order' do 
-    store.order("noodles", 1)
-    store.order("chow_mein", 1)
-    store.order("peking_duck", 1)
-    expect(store.cart.items_count).to eq(3) 
+
+  before do
+    Message.any_instance.stub(:send_message)
+    Restaurant.any_instance.stub(:puts)
+    Restaurant.any_instance.stub(:intro)
+    Restaurant.any_instance.stub(:get_payment)
   end
 
-  it 'should be able to add multiple number of items at once' do
-     store.order("peking_duck", 3)
-     expect(store.cart.items_count).to eq(3)
-  end
+    it 'should be able to add order to cart' do 
+      restaurant.order("noodles")
+      restaurant.order("chow_mein")
+      restaurant.order("peking_duck")
+      expect(restaurant.cart.items_count).to eq(3) 
+    end
 
-  it 'should be able to cancel and order' do 
-    store.order("chow_mein", 1)
-    store.order("noodles", 1)
-    store.cancel("noodles")
-    expect(store.cart.items_count).to eq(1) 
-  end
+    it 'should be able to create a dish object from an order' do 
+      restaurant.new_order('noodles')
+      expect(dish.name).to eq('noodles')
+    end
 
-  it 'should be able to confirm order' do 
-    store.order("noodles", 1)
-    expect(store.confirm_order).to eq(nil)
-  end
+    it 'should be able to confirm order' do 
+      expect(restaurant).to receive(:intro).with no_args
+      restaurant.order('noodles')
+      expect(restaurant.confirm_order).to 
+    end 
+
+    # it 'should be able to cancel and order' do 
+    #   restaurant.order("chow_mein")
+    #   restaurant.order("noodles")
+    #   restaurant.cancel("noodles")
+    #   expect(restaurant.cart.items_count).to eq(1) 
+    # end
+   
 
 end
