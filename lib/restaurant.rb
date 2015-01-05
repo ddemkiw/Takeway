@@ -1,7 +1,7 @@
 # require_relative 'menu'
 # require_relative 'cart'
 # require_relative 'dish'
-# require_relative 'message'
+require_relative 'message'
 
 class Restaurant
 
@@ -37,21 +37,15 @@ attr_reader :cart
 #       quit
 #   end
 
-#   def get_payment(payment)
+  def get_payment(payment)
+    payment == @cart.total_price ? send_confirmation : 'Derp'
+  end
 
-#     payment = gets.chomp.to_i
-#       until payment == @cart.total_price do 
-#         puts  "sorry, you did not enter the correct amount. please try again"
-#         print "> £"
-#         payment = gets.chomp.to_i
-#       end
-#   end
-
-#   def send_confirmation
-#     message = Message.new
-#     message.send_message("+447730344711")
-#     puts "Thank you for your order. A text message has been sent to your phone"
-#   end
+  def send_confirmation
+    message = Message.new
+    message.send_message("+447730344711")
+    return "Thank you for your order. A text message has been sent to your phone"
+  end
 
   def new_order(menu_key)
     new_order = @menu.dishes.assoc(menu_key)
