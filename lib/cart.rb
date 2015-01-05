@@ -4,31 +4,34 @@ class Cart
 
   attr_accessor :items
 
+
   def initialized
+    @paid = false
     @items
   end
+
+   def pay!
+    @paid = true
+    empty!
+  end
+  
+  def paid? 
+    @paid
+  end 
 
   def items 
     @items ||=[]
   end
 
   def add(item)
-    items << item
+    items << item 
   end
 
   def items_count
     items.count
   end
 
-  def list_items
-    items.map{|item| "#{item.name}, £#{item.price}"}
-  end
-
-  def remove(item)
-    @items.delete(item)
-  end
-
-  def empty
+  def empty!
     items.clear
   end
 

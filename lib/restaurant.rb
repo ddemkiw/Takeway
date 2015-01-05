@@ -1,7 +1,8 @@
-# require_relative 'menu'
-# require_relative 'cart'
-# require_relative 'dish'
+
 require_relative 'message'
+require_relative 'cart'
+require_relative 'menu'
+require_relative 'dish'
 
 class Restaurant
 
@@ -12,33 +13,8 @@ attr_reader :cart
     @cart = Cart.new
   end 
 
-#   def intro 
-#     puts "___Menu___"
-#     @menu.display
-#     puts "please select an item from the menu"
-#     puts "when you have completed your order, please type finish"
-#     print">"
-#     get_order
-#   end
-
-#   def get_order
-#     while(item = gets.chomp) do
-#         puts item=="finish" ? finish : order(item)
-#     end
-#   end
-
-#   def confirm_order
-#     puts "Items #{@cart.list_items}"
-#     puts "Total : £#{@cart.total_price}"
-#     puts "Please enter payment amount"
-#     print "> £"
-#       get_payment
-#       send_confirmation
-#       quit
-#   end
-
   def get_payment(payment)
-    payment == @cart.total_price ? send_confirmation : 'Derp'
+    payment == cart.total_price ?  cart.pay! && send_confirmation : 'This is not the correct amount.'
   end
 
   def send_confirmation
@@ -58,19 +34,6 @@ attr_reader :cart
     dish = Dish.new(:name => @name, :price => @price)
     @cart.add(dish)
   end
-
-#   # def cancel(item)
-#   #   cart.items.delete_if {|dish| dish.name == item}
-#   # end
-
-#   def finish
-#     confirm_order
-#   end
-
-#   def quit
-#     cart.empty
-#     exit!
-#   end
 
 
 end
