@@ -1,42 +1,26 @@
-Title
+Takeaway
 =======================
 
-## Synopsis
+This a very small takeaway-ordering application interacts with the Twilio API, allowing users to receive an SMS confirmation of their order with an ETA for delivery.
 
-TODO: Enter a description of your project here.
-
-![NAME_OF_IMAGE](http://ENTER_URL)
 
 ## Technologies Used
 
-- LANGUAGE_ONE
-- LANGUAGE_TWO
-- FRAMEWORK
-- TESTING SUITES
+- RUBY
+- Twilio API
+- RSPEC
 
-## Job List
+##Context
 
-- [ ]
-- [ ]
-- [ ]
-- [ ]
+Week 2 Challenge (Test) at Makers Academy
 
-## Favourite Code Snippet
-
-~~~
- TODO: paste code here
-~~~
-
-## Collaborators
-
-- NAME_ONE (http://www.github.com/USERNAME)
-- NAME_TWO (http://www.github.com/USERNAME)
+ERNAME)
 
 ## Still to complete/refactor
 
-- [ ]
-- [ ]
+- remove dependancy from Restaurant class
+- remove outputs from command line
 
 ## Takeaway
 
-TODO: Enter a personal reflection and/or things you learnt
+This was a good reminder of OOO Design  and Backend development. I briefly got carried away with outputting to command line to bolster my confidence in app. In the future, I will ensure that my tests are robust enough to ensure my confidence in the app instead. 
