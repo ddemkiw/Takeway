@@ -20,6 +20,6 @@ Week 2 Challenge (Test) at Makers Academy
 - remove dependancy from Restaurant class
 - remove outputs from command line
 
-## Takeaway
+## Reflections
 
 This was a good reminder of OOO Design  and Backend development. I briefly got carried away with outputting to command line to bolster my confidence in app. In the future, I will ensure that my tests are robust enough to ensure my confidence in the app instead. 
