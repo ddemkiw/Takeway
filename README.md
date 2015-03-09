@@ -14,7 +14,6 @@ This a very small takeaway-ordering application interacts with the Twilio API, a
 
 Week 2 Challenge (Test) at Makers Academy
 
-ERNAME)
 
 ## Still to complete/refactor
 
