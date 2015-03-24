@@ -22,6 +22,6 @@ Week 2 Challenge (Test) at Makers Academy
 
 ## Reflections
 
-This was a good reminder of OOO Design  and Backend development. I briefly got carried away with outputting to command line to bolster my confidence in app. In the future, I will ensure that my tests are robust enough to ensure my confidence in the app instead. 
+This was a good reminder of OOO Design  and Backend development. I briefly got carried away with outputting to command line to bolster my confidence. In the future, I will ensure that my tests are robust enough to ensure my confidence instead. 
 
 Working on a new challenge today and returning to this app to help with good OOD
